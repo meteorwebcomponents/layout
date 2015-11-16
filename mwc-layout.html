@@ -1,0 +1,56 @@
+<dom-module id="mwc-layout">
+
+    <style>
+    :host {
+        /*display: none!important;*/
+    }
+    
+    :host([active]) {
+        /*display: block!important;*/
+    }
+    </style>
+
+    <template>
+        <content class="mwc-layout" select="*"></content>
+    </template>
+
+    <script>
+    Polymer({
+
+        is: "mwc-layout",
+
+        observers: [
+            "optRegionChange(opt.region.*)"
+        ],
+
+        optRegionChange: function(change) {
+            console.log(change);
+        },
+
+        properties: {
+            active: {
+                notify: true,
+                reflectToAttribute: true,
+                type: Boolean,
+                value: false
+            },
+            opt: {
+                notify: true,
+                reflectToAttribute: true,
+                type: Object,
+                value: function() {
+                    return {
+                        region: {}
+                    };
+                }
+            }
+        },
+
+        render: function(opt) {
+            this.opt = opt;
+        }
+
+    });
+    </script>
+
+</dom-module>
