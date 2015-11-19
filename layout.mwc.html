@@ -18,14 +18,18 @@
     HTMLImports.whenReady(function() {
         Polymer({
 
-            flush: function(newValue, oldValue) {
-                var region = Object.keys(this.opt);
+            activeChange: function(newValue, oldValue) {
+                if (newValue === false && oldValue === true) {
+                    var region = Object.keys(this.opt);
 
-                for (var A = 0; A < region.length; A++) {
-                    var element = this.querySelectorAll('*[region="' + region[A] + '"]');
+                    for (var A = 0; A < region.length; A++) {
+                        var element = this.querySelectorAll('*[region="' + region[A] + '"]');
 
-                    for (Z = 0; Z < element.length; Z++) {
-                        element[Z].innerHTML = "";
+                        for (Z = 0; Z < element.length; Z++) {
+                            Polymer.dom(element[Z]).childNodes.forEach(function(node) {
+                                Polymer.dom(element[Z]).removeChild(node);
+                            });
+                        }
                     }
                 }
             },
@@ -53,8 +57,6 @@
                             var element = this.querySelectorAll('*[region="' + region[A] + '"]');
 
                             for (Z = 0; Z < element.length; Z++) {
-                                // element[Z].innerHTML = "";
-
                                 Polymer.dom(element[Z]).appendChild(document.createElement(change.value[region[A]]));
                             }
                         } else {
@@ -67,6 +69,7 @@
             properties: {
                 active: {
                     notify: true,
+                    observer: "activeChange",
                     reflectToAttribute: true,
                     type: Boolean,
                     value: false

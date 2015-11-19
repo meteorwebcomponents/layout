@@ -4,7 +4,7 @@ var PolymerLayout = function() {
 
 // layout[String]
 // opt[Object] one-level deep
-// plugIn[Array]
+// plugIn[Array] placeholder
 // rerender[Array]
 
 PolymerLayout.prototype.render = function(layout, opt, plugIn, rerender) {
