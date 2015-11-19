@@ -18,13 +18,25 @@
     HTMLImports.whenReady(function() {
         Polymer({
 
+            flush: function(newValue, oldValue) {
+                var region = Object.keys(this.opt);
+
+                for (var A = 0; A < region.length; A++) {
+                    var element = this.querySelectorAll('*[region="' + region[A] + '"]');
+
+                    for (Z = 0; Z < element.length; Z++) {
+                        element[Z].innerHTML = "";
+                    }
+                }
+            },
+
             is: "mwc-layout",
 
             observers: [
-                "optRegionChange(opt.*)"
+                "optChange(opt.*)"
             ],
 
-            optRegionChange: function(change) {
+            optChange: function(change) {
                 var region = Object.keys(change.value);
 
                 for (var A = 0; A < region.length; A++) {
@@ -41,7 +53,7 @@
                             var element = this.querySelectorAll('*[region="' + region[A] + '"]');
 
                             for (Z = 0; Z < element.length; Z++) {
-                                element[Z].innerHTML = "";
+                                // element[Z].innerHTML = "";
 
                                 Polymer.dom(element[Z]).appendChild(document.createElement(change.value[region[A]]));
                             }
