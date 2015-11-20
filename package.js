@@ -1,15 +1,15 @@
 Package.describe({
-    documentation: "README.md",
+    documentation: null,
     git: "https://github.com/meteorwebcomponents/layout.git",
     name: "mwc:layout",
     summary: "mwc layout",
-    version: "1.1.3"
+    version: "1.1.5"
 });
 
 Package.onUse(function(api) {
     api.versionsFrom("1.0");
 
-    api.addAssets("layout.mwc.html", ["client"]);
+    api.addAssets("mwc_layout.html", ["client"]);
     api.addFiles("PolymerLayout.js", ["client"]);
 
     api.export("mwcLayout");
