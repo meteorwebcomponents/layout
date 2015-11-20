@@ -26,9 +26,7 @@
                         var element = this.querySelectorAll('*[region="' + region[A] + '"]');
 
                         for (Z = 0; Z < element.length; Z++) {
-                            Polymer.dom(element[Z]).childNodes.forEach(function(node) {
-                                Polymer.dom(element[Z]).removeChild(node);
-                            });
+                            element[Z].innerHTML = "";
                         }
                     }
                 }
@@ -48,9 +46,7 @@
                         var element = this.querySelectorAll('*[region="' + region[A] + '"]');
 
                         for (Z = 0; Z < element.length; Z++) {
-                            Polymer.dom(element[Z]).childNodes.forEach(function(node) {
-                                Polymer.dom(element[Z]).removeChild(node);
-                            });
+                            element[Z].innerHTML = "";
 
                             Polymer.dom(element[Z]).appendChild(change.value[region[A]]);
                         }
@@ -59,9 +55,7 @@
                             var element = this.querySelectorAll('*[region="' + region[A] + '"]');
 
                             for (Z = 0; Z < element.length; Z++) {
-                                Polymer.dom(element[Z]).childNodes.forEach(function(node) {
-                                    Polymer.dom(element[Z]).removeChild(node);
-                                });
+                                element[Z].innerHTML = "";
 
                                 Polymer.dom(element[Z]).appendChild(document.createElement(change.value[region[A]]));
                             }

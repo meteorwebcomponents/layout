@@ -3,7 +3,7 @@ Package.describe({
     git: "https://github.com/meteorwebcomponents/layout.git",
     name: "mwc:layout",
     summary: "mwc layout",
-    version: "1.1.2"
+    version: "1.1.3"
 });
 
 Package.onUse(function(api) {
