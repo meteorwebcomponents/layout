@@ -1,5 +1,8 @@
 {
     "description": "mwc layout engine",
+    "keywords": [
+        "web-components"
+    ],
     "main": [
         "mwc-layout.html"
     ],
