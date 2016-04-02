@@ -22,7 +22,7 @@ index.html
 </body>
 ```
 
-```js
+```html
 <dom-module id="test-element">
   <template>
         name : {{name}}
