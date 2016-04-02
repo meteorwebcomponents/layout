@@ -21,6 +21,7 @@ index.html
 
 </body>
 ```
+Define a polymer element
 
 ```html
 <dom-module id="test-element">
