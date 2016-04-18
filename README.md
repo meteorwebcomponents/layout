@@ -6,11 +6,6 @@
 
 ## Installation
 
-### Using meteor package. Meteor 1.3+. Depends on [synthesis](https://github.com/meteorwebcomponents/synthesis)
-
-```sh
-meteor add mwc:layout
-```
 ### Using Bower
 
 ```sh
