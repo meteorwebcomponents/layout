@@ -3,7 +3,7 @@ Package.describe({
   git: "https://github.com/meteorwebcomponents/layout.git",
   name: "mwc:layout",
   summary: "Polymer Layout renderer",
-  version: "1.1.14"
+  version: "1.1.15"
 });
 
 Package.onUse(function(api) {
