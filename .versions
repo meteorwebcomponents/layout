@@ -12,8 +12,9 @@ meteor@1.1.14
 minifier-js@1.1.11
 modules@0.6.1
 modules-runtime@0.6.3
-mwc:layout@1.1.17
-mwc:synthesis@1.0.25
+mwc:layout@1.1.18
+mwc:synthesis@1.0.27
+mwc:synthesis-compiler@1.0.26
 promise@0.6.7
 random@1.0.9
 spacebars-compiler@1.0.11
