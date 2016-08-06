@@ -68,9 +68,49 @@ Polymer({
 
 Now use  
 
+```js
+
+mwcLayout.render(layout, opt, rerender);
+// layout[String]
+// opt[Object] one-level deep
+// rerender[Boolean]
+
+```
+
 ```js 
 mwcLayout.render("demo-layout",{"main":"test-element"});
 ```
+
+#### forceRender 
+
+In mwc:layout we dont re render the layout unless the new layout is not equal to the current layout or forceRender argument is set. This is to prevent unwanted rerendering while changing routes(even if you change a param/queryparam the route gets rerun so does the render function written inside FlowRouter action). forceRender comes in handy when you have to change the rendering while keeping the current layout. 
+
+```html
+<!-- client/main.html -->
+...
+<mwc-layout id="demo-landing">
+      <div region="header"></div>
+      <div region="main"></div>
+</mwc-layout>
+...
+```
+
+```js
+// imports/startup/client/router.js
+...
+  action:function(params,queryParams){
+    mwcLayout.render("demo-landing",{"main":"test-layout1","header":"test-header"});
+  }
+...
+
+```
+
+Now if you try `mwcLayout.render("demo-landing",{"main":"test-layout2","header":"test-header"})` from console it wont work since layout is not changed and forceRender is not set.
+
+This works-> `mwcLayout.render("demo-landing",{"main":"test-layout","header":"test-header"},true);`
+
+
+## Links
 
 Layout Manager for [Meteor](https://www.meteor.com/) + [Polymer - 1.0](https://www.polymer-project.org/) 
 
