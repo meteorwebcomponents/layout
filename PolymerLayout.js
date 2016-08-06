@@ -4,11 +4,11 @@ var PolymerLayout = function() {
 
 // layout[String]
 // opt[Object] one-level deep
-// rerender[Boolean]
+// forceRender[Boolean]
 
-PolymerLayout.prototype.render = function(layout, opt, rerender) {
+PolymerLayout.prototype.render = function(layout, opt, forceRender) {
     if (document.querySelector('mwc-layout[id="' + layout + '"]')) {
-        if (this.currentLayout != layout || rerender) {
+        if (this.currentLayout != layout || forceRender) {
             if (this.currentLayout) {
                 document.querySelector('mwc-layout[id="' + this.currentLayout + '"]').active = false
             }
