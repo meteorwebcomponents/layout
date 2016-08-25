@@ -4,6 +4,10 @@
   -->
 # Meteor Webcomponents Layout.
 
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/aruntk/meteorwebcomponents?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+[![Donate](https://dantheman827.github.io/images/donate-button.svg)](https://www.paypal.me/arunkumartk)
+
 ## Installation
 
 ### Using meteor package. Meteor 1.3+. Depends on [synthesis](https://github.com/meteorwebcomponents/synthesis)
